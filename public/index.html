@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+	<title>Dz Web</title>
+</head>
+<body class="font-poppins">
+    <section class="top-section w-full">
+        <header>
+            <div class="container px-4 m-auto">
+                <div class="flex w-full h-20 items-center justify-between bg-transparent border-b border-white">
+                    <div>
+                        <a href="/"><img src="img/logo-white.png" class="h-8 md:h-10 w-auto" alt="DZ Web"></a>
+                    </div>
+                    <ul class="flex items-center">
+                        <li>
+                            <a href="" class="text-white text-xl leading-6">Acceuil</a>
+                        </li>
+                        <li class=" ml-4 sm:ml-8 scroll-to-products">
+                            <a href="#scroll-to-products" class="text-white text-xl leading-6">Produits</a>
+                        </li>
+                        <li class="ml-4 sm:ml-8 hidden sm:inline-block">
+                            <button class="scroll-to-contact py-2 px-8 bg-white rounded font-roboto text-xl text-primary leading-6">Contacter Nous</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container m-auto">
+            <div class="hero-box relative">
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-12 md:col-span-8 md:col-start-3 mt-10">
+                        <h1 class="text-center w-full text-5xl md:text-7xl leading-tight font-poppins font-bold text-white capitalize">Votre Site Web <span class="text-customblue ">PRO</span> <br>à 
+                            <span class="bas-prix">bas Prix</span></h1>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-12 md:col-span-6 md:col-start-4 mt-10">
+                        <p class="text-center text-white text-xl leading-10 font-roboto">Commander votre site et commancer votre business le plus rapidement possible.</p>
+                    </div>
+                </div>
+                <div class="w-full text-center mt-10">
+                    <button class="h-12 px-20 bg-customblue md:bg-white rounded font-bold text-xl leading-6 hover:bg-customblue hover:text-white transition scroll-to-contact"><span class="decorated-text hover:text-white">Contacter nous</span></button>
+                </div>
+                <img src="img/globe.png" class="absolute hidden sm:block w-32 sm:w-32 md:w-40 lg:w-auto left-0 top-28 " alt="">
+                <div class="flex justify-between">
+                    <img src="img/desktop.png" class="h-60 hidden sm:block md:h-72 lg:h-auto -ml-16" alt="">
+                    <img src="img/phone.png" class="transform hidden sm:block -translate-y-10 md:-translate-y-40 h-60 md:h-72 lg:h-auto" alt="">
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="mt-12 container m-auto">
+        <div class="">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="w-full rounded-2xl py-8 px-4 bg-gray-100 shadow-2xl text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="img/rapidity-icon.svg" class="" alt="">
+                    </div>
+                    <h6 class="text-xl leading-6 text-gray-700 mt-4 font-normal">Rapidité</h6>
+                    <p class="mt-4 font-roboto">votre site web est livré en un temps record</p>
+                </div>
+                <div class="w-full rounded-2xl py-8 px-4 bg-gray-100 shadow-2xl text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="img/ergonomie-icon.svg" class="" alt="">
+                    </div>
+                    <h6 class="text-xl leading-6 text-gray-700 mt-4 font-normal">Ergonomie</h6>
+                    <p class="mt-4 font-roboto">Site web facile à naviguer, accessible à tout le monde avec une rapidité d'habituation</p>
+                </div>
+                <div class="w-full rounded-2xl py-8 px-4 bg-gray-100 shadow-2xl text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="img/design-icon.svg" class="" alt="">
+                    </div>
+                    <h6 class="text-xl leading-6 text-gray-700 mt-4 font-normal">Design</h6>
+                    <p class="mt-4 font-roboto">Nos nous reposons sur notre équipe professionnelle pour offrir le meilleur du design</p>
+                </div>
+                <div class="w-full rounded-2xl py-8 px-4 bg-gray-100 shadow-2xl text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="img/tech-icon.svg" class="" alt="">
+                    </div>
+                    <h6 class="text-xl leading-6 text-gray-700 mt-4 font-normal">Technologie</h6>
+                    <p class="mt-4 font-roboto">Nous utilisons les dernières technologies pour développer et adapter nos sites web</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section id="products-section" class="mt-12 pb-28 bg-product-bg bg-contain bg-bottom bg-no-repeat">
+        <div class="container m-auto">
+            <h1 class="decorated-text text-center text-5xl md:text-6xl font-bold">Produits</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mx-4 mt-16 xl:grid-cols-12 ">
+                <div class="product-card product-card1 col-span-1 xl:col-span-5 xl:col-start-2 relative h-fit pt-10 pb-52 px-8 bg-white rounded-2xl shadow-2xl">
+                    <h3 class="text-center capitalize text-3xl font-bold text-gray-700">site web <span class="text-customblue ">vitrine</span></h3>
+                    <p class="mt-12 text-xl leading-8 font-roboto text-center">
+                        Vous avez besoin d’un site web pour marquez votre présence sur le Web. Cette formule avec 4 ou 5 pages vous offre la possibilité de présenter votre entreprise à petit budget et vous disposerez de Site web et votre Email professionnel prêt à mettre sur votre carte de visite
+                    </p>
+                    <div class="product-card1-footer absolute left-0 bottom-0 w-full h-auto mt-20 text-center pt-20 pb-5 px-0 bg-product1-bg bg-cover bg-no-repeat">
+                        <span class="text-gray-700 text-xl leading-8 font-semibold">à partir de</span>
+                        <h3 class="text-4xl text-white font-bold mt-3">49.500 DA</h3>
+                    </div>
+                </div>
+
+                <div class="col-span-1 xl:col-span-5 xl:col-start-7 product-card relative h-fit pt-10 pb-44 px-8 bg-white rounded-2xl shadow-2xl">
+                    <h3 class="text-center capitalize text-3xl font-bold text-gray-700">Site web <span class="text-customblue ">dynamique</span> <br> ou <span class="text-customblue">e-commerce</span></h3>
+                    <p class="mt-12 text-xl leading-8 font-roboto text-center">
+                        Cette formule est idéale pour les contenus dynamiques;
+                        Site web avec Gestion de contenu CMS dédié aux fournisseurs de services et commerces désireux à promouvoir leurs activité sur internet. Vous aurez votre boutique en ligne à mettre à jour à votre guise
+                    </p>
+                    <div class="product-card1-footer absolute left-0 bottom-0 w-full h-auto mt-20 text-center pt-20 pb-5 px-0 bg-product2-bg bg-cover bg-no-repeat">
+                        <span class="text-gray-700 text-xl leading-8 font-semibold">à partir de</span>
+                        <h3 class="text-4xl text-white font-bold mt-3">79.500 DA</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-section" class="mt-12 bg-footer-bg bg-contain bg-bottom bg-no-repeat">
+        <div class="container m-auto">
+            <div class="pt-12 pb-8 px-8 bg-white shadow-2xl rounded-2xl">
+                <h1 class="decorated-text text-center text-5xl md:text-6xl font-bold">Contacter Nous</h1>
+                <p class="text-center text-xl leading-6 mt-5">Contactez nous pour commander votre site web</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
+                    <div class="order-2 lg:order-1">
+                        <ul class="list-none pl-0 list">
+                            <li class="flex text-xl leading-6 mb-8"><img src="img/phone.svg" class="mr-5 h-6" alt=""> +213 770 99 51 87</li>
+                            <li class="flex text-xl leading-6 mb-8"><img src="img/home.svg" class="mr-5 h-6" alt=""> Plateau d'Ouled Fayet
+                                Alger</li>
+                            <li class="flex text-xl leading-6 mb-8"><img src="img/mail.svg" class="mr-5 h-6" alt=""> contact@dz-web.net</li>
+                        </ul>
+                        <div class="w-full">
+                            <img src="img/map.png" class="w-full" alt="">
+                        </div>
+                    </div>
+                    <form class="order-1 lg:order-2">
+                        <div>
+                            <label for="" class="">Nom et Prénom</label>
+                            <input type="text" class="input-error w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
+                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                        </div>
+                        <div class="mt-5">
+                            <label for="" class="">Email</label>
+                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
+                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                        </div>
+                        <div class="mt-5">
+                            <label for="" class="">Sujet</label>
+                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
+                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                        </div>
+                        <div class="mt-5">
+                            <label for="" class="">Message</label>
+                            <textarea type="text" rows="5" class="w-full bg-gray-100 rounded mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"></textarea>
+                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                        </div>
+                        <div class="mt-5">
+                            <button class="w-full h-14 bg-secondary text-white text-xl font-bold leading-6 font-roboto capitalize rounded hover:bg-customblue hover:text-white transition"><img class="inline-block mr-5" src="img/send-icon.svg" alt="">envoyer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <footer class="h-20 mt-20 w-full border-t border-white py-7 ">
+                <h3 class="text-white text-center text-xl leading-6">Tous les droits sont réservés, © Dz web 2021</h3>
+            </footer>
+        </div>
+    </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<script>
+    $(".scroll-to-contact").on("click", function () {
+        $("html, body").animate({ scrollTop: $('#contact-section').offset().top }, 1000);
+    });
+
+    $(".scroll-to-products").on("click", function () {
+        $("html, body").animate({ scrollTop: $('#products-section').offset().top }, 700);
+    });
+</script>
+</body>
+</html>

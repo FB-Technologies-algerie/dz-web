@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-section{
+    /*
+    background: rgb(91,78,198);
+    background: linear-gradient(45deg, rgba(91,78,198,1) 18%, rgba(203,145,235,1) 100%);
+    height: calc(100vh + 208px);*/
+    background-image: url('img/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc(100vh + 240px);
+}
+
+.section-triangle::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0px 100px 200px;
+    border-color: transparent transparent #007bff transparent;
+}   
+
+.bas-prix{
+    position: relative;
+    display: inline-block;
+    padding: 4px 12px;
+}
+.bas-prix::before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    border:1px dashed #fff;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+.bas-prix::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    top: calc(100% - 16px);
+    right: -30px;
+    background-image: url('../img/cursor-icon.png');
+    background-repeat: no-repeat;
+}
+
+.decorated-text{
+    background: -webkit-linear-gradient(#5B4EC6, #C98FEA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+@media screen and (max-width:620px){
+    button .decorated-text{
+        background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+    }
+}
+button:hover .decorated-text{
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.product-card{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+/*
+.product-card1-footer::before{
+    @apply block absolute left-0 w-full h-0 border-solid;
+    content: '';
+    top: -60px;
+    border-style: solid;
+    border-width: 60px 0 0 420px;
+    border-color: transparent transparent transparent #11C7EF;
+}
+.product-card2-footer::before{
+    @apply block absolute left-0 w-full h-0 border-solid;
+    content: '';
+    top: -60px;
+    border-style: solid;
+    border-width: 60px 420px 0 0;
+    border-color: transparent #11C7EF transparent transparent;
+}
+*/
+.input-error{
+    @apply border-red-500;
+}
+
+.input-error-message{
+    @apply text-sm text-red-500;
+}
