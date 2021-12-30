@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	<title>Dz Web</title>
 </head>
 <body class="font-poppins">
@@ -137,32 +137,42 @@
                             <li class="flex text-xl leading-6 mb-8"><img src="./img/mail.svg" class="mr-5 h-6" alt=""> contact@dz-web.net</li>
                         </ul>
                         <div class="w-full">
-                            <img src="./img/map.png" class="w-full" alt="">
+                            <div id="map" style="height: 380px;"></div>
+                            <!-- <img src="./img/map.png" class="w-full" alt=""> -->
                         </div>
                     </div>
                     <form class="order-1 lg:order-2">
                         <div>
                             <label for="" class="">Nom et Prénom</label>
-                            <input type="text" class="input-error w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
-                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"
+                                    id="full_name">
+                            <span class="input-error-message" id="full_name_error"  style="display: none;">le nom doit être plus que 3 charactères</span>
                         </div>
                         <div class="mt-5">
                             <label for="" class="">Email</label>
-                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
-                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                            <input type="email" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"
+                                    id="email">
+                            <span class="input-error-message" id="email_error"  style="display: none;">le nom doit être plus que 3 charactères</span>
                         </div>
                         <div class="mt-5">
                             <label for="" class="">Sujet</label>
-                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue">
-                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                            <input type="text" class="w-full bg-gray-100 rounded h-14 mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"
+                                    id="subject">
+                            <span class="input-error-message" id="subject_error"  style="display: none;">le nom doit être plus que 3 charactères</span>
                         </div>
                         <div class="mt-5">
                             <label for="" class="">Message</label>
-                            <textarea type="text" rows="5" class="w-full bg-gray-100 rounded mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"></textarea>
-                            <span class="input-error-message">le nom doit être plus que 3 charactères</span>
+                            <textarea type="text" rows="5" class="w-full bg-gray-100 rounded mt-2.5 pl-5 border border-gray-300 focus:outline-none focus:border-customblue"
+                                    id="body"></textarea>
+                            <span class="input-error-message" id="body_error" style="display: none;">le nom doit être plus que 3 charactères</span>
                         </div>
                         <div class="mt-5">
-                            <button class="w-full h-14 bg-secondary text-white text-xl font-bold leading-6 font-roboto capitalize rounded hover:bg-customblue hover:text-white transition"><img class="inline-block mr-5" src="./img/send-icon.svg" alt="">envoyer</button>
+                            <button class="w-full h-14 bg-secondary text-white text-xl font-bold leading-6 font-roboto capitalize rounded hover:bg-customblue hover:text-white transition"
+                                    type="button"
+                                    onclick="sendEmail()">
+                                <img class="inline-block mr-5" src="./img/send-icon.svg" alt="">
+                                Envoyer
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -174,6 +184,8 @@
     </section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="./index.js"></script>
 <script>
     $(".scroll-to-contact").on("click", function () {
@@ -183,6 +195,17 @@
     $(".scroll-to-products").on("click", function () {
         $("html, body").animate({ scrollTop: $('#products-section').offset().top }, 700);
     });
+    var map = L.map('map').setView([36.719433779080255, 2.948721183696395], 15);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoid2VpcmRkZXYiLCJhIjoiY2tzenZhNTEzMjNreDJ2bHMxOHI0ZHJlbSJ9.wHqq3ZNm9ka7RIty1eTNYA'
+}).addTo(map);
+var marker = L.marker([36.719433779080255, 2.948721183696395]).addTo(map);
+marker.bindPopup("<b>DZ Web</b>").openPopup();
 </script>
 </body>
 </html>
